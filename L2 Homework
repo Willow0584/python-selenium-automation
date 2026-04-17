@@ -1,0 +1,24 @@
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+# init driver
+driver = webdriver.Chrome()
+driver.maximize_window()
+
+# open the url
+driver.get("https://amazon.com")
+
+driver.find_element()
+
+Amazon logo, search by ID, "ap_frn_log"
+Email field, search by ID, id="ap_email_login"
+Contiune Button, search by title, "<title dir="ltr">Amazon Sign-In</title>"
+Conditons of a use link, search by class,"<div id="a-page"><script type="a-state" data-a-state="{&quot;key&quot;:&quot;a-wlab-states&quot;}">{"AUI_72554":"C","AUI_TEMPLATE_WEBLAB_CACHE_333406":"C"}</script><script>typeof uex === 'function' && uex('ld', 'portal-bb', {wb: 1})</script><!-- sp:end-feature:start-body -->
+Privacy Notice link, search by class, "#a-page > div.cs-help-v4 > div.cs-help-header"
+Create your amazon account button, search by class, "#hub-gateway-app-unauth > div.page-wrapper.hero-banner > div > h1"
+Need help link, search by class, "#hub-gateway-app-unauth > div.page-wrapper.hero-banner > div > h1"
+Forget your password link, search by class,"#a-page > div.a-container > div.contact-us-header.cu_account_issues_v2"
+Other issues with Sign-In Link, search by class, "class="a-m-us a-aui_72554-c a-aui_template_weblab_cache_333406-c""
+Create your Amazon account button, search by ID,"nav-abvoc-proactive-feedback-widget"
+
