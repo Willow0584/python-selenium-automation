@@ -1,0 +1,57 @@
+@@ -0,0 +1,56 @@
+from selenium.webdriver.chromium.webdriver import ChromiumDriver
+
+Link Text:Join Stack Overflow
+id="By clicking “Sign up”, you agree to our"
+id="and acknowledge you have read our"
+Link Text: terms of service
+Link Text: privacy policy
+id="signup-google"
+id="signup-github"
+id="signup-modal-submit-button"
+id="svg-icon iconEyeOff"
+id="signup-modal-email"
+id="signup-modal-password"
+
+Feature: Verifying empty cart message on Target website
+
+Scenario: User will see empty cart message when cart has no items
+Open the target website, click on cart icon, then you should see the message "Your cart is empty"
+
+import io.cucumber.java.en.*;
+import org.openga.selenium.By;
+import org.openga.selenium.WebDriver;
+import org.openga.selenium.WebElement;
+import org.openga.selenium.chrome.ChromeDriver;
+import org.junit.Assert;
+
+public class CartSteps {
+
+Webdriver driver:
+
+@Given("I open the Target website"
+public void i_open_the_target_website() {
+  driver = new ChromiumDriver();
+  driver.manage().window().maximize();
+  driver.get("https://target.com");
+}
+
+@When("I click on cart icon")
+public void i_click_on_the_cart_icon() throws InterruptedException {
+    Thread.sleep(15); // wait for page to load
+
+    WebElement cartIcon = driver.findElement(By.xpath("//a[data-test="@web/CartLink']"));
+    cartIcon.click();
+}
+
+@Then(("I should see the cart message {string}")
+public void i_should_see_the_message() throws InterruptedException {
+Thread.sleep(15); // wait for page to load
+
+}
+
+WebElement emptyCartMsg = driver.findElement(By.xpath("//a[contains(@href,'/Cart')]"));
+String actualCartMsg = WebElement emptyCartMsg;
+
+Assert.assertequal(expectedCartMsg, actualCartMsg);
+driver.quit();
