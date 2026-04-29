@@ -1,24 +1,68 @@
+Conditions of Use
+XPATH:Sx("//a[contains(@href,'/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&nodeId=508088"')]
+
+Email field
+id="ap_email_login"
+
+Continue button
+id="continue-announce"
+
+Conditions of use link
+id= "Conditions of Use"
+
+Privacy Notice link
+Link Text: Conditions of Use
+
+Need help link
+Link Text: Privacy Notice
+
+Forgot your password link
+Link Text: Password Reset
+
+Other issues with Sign-In link
+id = "ap-other-signin-issues-link"
+
+Create your Amazon account button
+Link Text: Create your Amazon account
+
+Python
+
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-# init driver
 driver = webdriver.Chrome()
 driver.maximize_window()
 
-# open the url
-driver.get("https://amazon.com")
+driver.get("https://www.target.com/")
+sleep(2)
 
-driver.find_element()
+  # Step 1: Open Target homepage
+    driver.get("https://www.target.com/")
+    time.sleep(3)
 
-Amazon logo, search by ID, "ap_frn_log"
-Email field, search by ID, id="ap_email_login"
-Contiune Button, search by title, "<title dir="ltr">Amazon Sign-In</title>"
-Conditons of a use link, search by class,"<div id="a-page"><script type="a-state" data-a-state="{&quot;key&quot;:&quot;a-wlab-states&quot;}">{"AUI_72554":"C","AUI_TEMPLATE_WEBLAB_CACHE_333406":"C"}</script><script>typeof uex === 'function' && uex('ld', 'portal-bb', {wb: 1})</script><!-- sp:end-feature:start-body -->
-Privacy Notice link, search by class, "#a-page > div.cs-help-v4 > div.cs-help-header"
-Create your amazon account button, search by class, "#hub-gateway-app-unauth > div.page-wrapper.hero-banner > div > h1"
-Need help link, search by class, "#hub-gateway-app-unauth > div.page-wrapper.hero-banner > div > h1"
-Forget your password link, search by class,"#a-page > div.a-container > div.contact-us-header.cu_account_issues_v2"
-Other issues with Sign-In Link, search by class, "class="a-m-us a-aui_72554-c a-aui_template_weblab_cache_333406-c""
-Create your Amazon account button, search by ID,"nav-abvoc-proactive-feedback-widget"
+    # Step 2: Click Account button
+    account_btn = driver.find_element(By.XPATH, class="//button[contains(@aria-label,'Account')]")
+    account_btn.click()
+    time.sleep(2)
 
+    # Step 3: Click Sign In from side navigation
+    signin_btn = driver.find_element(By.XPATH, class="//a[contains(text(),'Sign in')]")
+    signin_btn.click()
+    time.sleep(3)
+
+    # Step 4: Verify Sign-In page opened
+    signin_header = driver.find_element(
+        By.XPATH, class="//h1[contains(text(),'Sign in') or contains(text(),'create account')]"
+    )
+
+    # Verify Sign-In button is present
+    signin_button = driver.find_element(
+        By.XPATH, class="//button[contains(text(),'Sign in')]"
+    )
+
+    print("Sign-In page elements found successfully.")
+
+Lastly:
+    time.sleep(3)
+    driver.quit()
