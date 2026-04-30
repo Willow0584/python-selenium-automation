@@ -1,29 +1,34 @@
-Conditions of Use
+#Conditions of Use
 XPATH:Sx("//a[contains(@href,'/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&nodeId=508088"')]
 
-Email field
-id="ap_email_login"
+#Email field
+driver.find_element(By.ID, "ap_email_login")
 
-Continue button
-id="continue-announce"
+#Continue button
+driver.find_element(By.ID, ="continue-announce")
 
-Conditions of use link
-id= "Conditions of Use"
+#Conditions of use link
+driver.find_element(By.ID, = "Conditions of Use")
 
-Privacy Notice link
+#Privacy Notice link
 Link Text: Conditions of Use
+driver.find_element(By.LINK_TEXT, "Conditions of Use").send_keys("")
 
-Need help link
+#Need help link
 Link Text: Privacy Notice
+driver.find_element(By.LINK_TEXT, "Privacy Notice").send_keys("")
 
-Forgot your password link
+#Forgot your password link
 Link Text: Password Reset
+driver.find_element(By.LINK_TEXT, "Privacy Notice").send_keys("")
 
-Other issues with Sign-In link
+#Other issues with Sign-In link
 id = "ap-other-signin-issues-link"
+driver.find_element(By.ID, = "ap-other-signin-issues-link")
 
-Create your Amazon account button
+#Create your Amazon account button
 Link Text: Create your Amazon account
+driver.find_element(By.LINK_TEXT, "Create your Amazon account").send_keys("")
 
 Python
 
