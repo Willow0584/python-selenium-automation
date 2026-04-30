@@ -1,6 +1,5 @@
 Feature: Target Product Search
 
-
 @when('I search for "{product}"')
 def step_impl(context, product):
     search_box = context.driver.find_element(By.ID, "search")
@@ -20,15 +19,15 @@ def step_impl(context):
 
     @when("I click on the first product result")
     def step_impl(context):
-        first_item = context.driver.find_element(By.CSS_SELECTOR, "[data-test='product-card']")
-        first_item.click()
+    first_item = context.driver.find_element(By.CSS_SELECTOR, "[data-test='product-card']")
+    first_item.click()
 
     @when("I add the product to the cart")
     def step_impl(context):
-        add_button = context.driver.find_element(By.CSS_SELECTOR, "[data-test='add-to-cart-button']")
-        add_button.click()
+    add_button = context.driver.find_element(By.CSS_SELECTOR, "[data-test='add-to-cart-button']")
+    add_button.click()
 
     @then("the cart should contain at least 1 item")
     def step_impl(context):
-        cart_count = context.driver.find_element(By.CSS_SELECTOR, "[data-test='cart-count']").text
-        assert int(cart_count) > 0
+    cart_count = context.driver.find_element(By.CSS_SELECTOR, "[data-test='cart-count']").text
+    assert int(cart_count) > 0
