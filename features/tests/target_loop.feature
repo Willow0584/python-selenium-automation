@@ -13,11 +13,11 @@ print(f"Found {len(color_airpods)} colors")
 
 for index in range(len(color_airpods)):
     # Re-locate elements each loop (React re-renders DOM)
-    swatches = wait.until(
-        EC.presence_of_all_elements_located((By.CSS_SELECTOR, "[data-test='colorSwatch']"))
+    airpods = wait.until(
+        EC.presence_of_all_elements_located((By.CSS_SELECTOR, "[data-test='colorairpod']"))
     )
 
     airpod = airpods [index]
     color_name = airpod.get_attribute("aria-label")
 
-    wait.until(EC.element_to_be_clickable(swatch)).click()
+    wait.until(EC.element_to_be_clickable(airpod)).click()

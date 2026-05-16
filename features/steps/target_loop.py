@@ -7,4 +7,3 @@ driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 10)
 
 driver.get("https://www.target.com/p/apple-airpods-4/-/A-93606140?preselect=85978615#lnk=sametab")
-
